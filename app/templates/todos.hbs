@@ -6,10 +6,10 @@
 
   <section id="main">
     <ul id="todo-list">
-      {{#each}}
-        <li>
+      {{#each todo in model}}
+        <li {{bind-attr class="isCompleted:completed"}}>
           <input type="checkbox" class="toggle">
-          <label>{{title}}</label><button class="destroy"></button>
+          <label>{{todo.title}}</label><button class="destroy"></button>
         </li>
       {{/each}}
     </ul>
